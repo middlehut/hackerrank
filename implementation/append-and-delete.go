@@ -29,19 +29,19 @@ func main() {
 	mindel := len(s) - pos
 	minapp := len(t) - pos
 
-	if mindel + minapp > k {
+	if mindel+minapp > k {
 		fmt.Println("No")
 		return
 	}
 
-	if mindel + minapp == k {
+	if mindel+minapp == k {
 		fmt.Println("Yes")
 		return
 	}
 
 	if len(s) > len(t) {
 		if k > mindel {
-			if (k - mindel) % 2 == 0 {
+			if (k-mindel)%2 == 0 {
 				fmt.Println("Yes")
 			} else {
 				fmt.Println("No")
@@ -49,7 +49,7 @@ func main() {
 		}
 	} else if len(t) > len(s) {
 		if k > minapp {
-			if (k - minapp) % 2 == 0 {
+			if (k-minapp)%2 == 0 {
 				fmt.Println("Yes")
 			} else {
 				fmt.Println("No")
@@ -57,19 +57,19 @@ func main() {
 		}
 	} else {
 		if pos == len(s) {
-			if k % 2 == 0 {
-				fmt.Println("Yes")				
-			} else if k >= len(s) * 2 {
+			if k%2 == 0 {
+				fmt.Println("Yes")
+			} else if k >= len(s)*2 {
 				fmt.Println("Yes")
 			} else {
 				fmt.Println("No")
 			}
 		} else {
-            if k >= minapp + mindel || k % 2 == 0 {
-                fmt.Println("Yes")
-            } else {
-                fmt.Println("No")
-            }
+			if k >= minapp+mindel || k%2 == 0 {
+				fmt.Println("Yes")
+			} else {
+				fmt.Println("No")
+			}
 		}
 	}
 }
